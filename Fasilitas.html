@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const html = document.documentElement;
+
+      if(savedTheme === "dark") {
+        html.classList.add("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+          }
+        }, 10);
+
+      } else {
+        html.classList.remove("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+          }
+        }, 10);
+      }
+    })();
+  </script>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" class="logo">
+        <div class="school-name">
+          <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+        </div>
+      </div>
+      <button class="theme-switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="theme-icon"></i> Mode
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+        <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+        <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FASILITAS SECTION -->
+  <section id="fasilitas" class="fasilitas-section">
+    <h2>FASILITAS HAFSA BOARDING SCHOOL</h2>
+    <p>Kenyamanan dan sarana terbaik untuk mendukung kegiatan belajar</p>
+
+    <div id="mode-slider">
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="card"><img src="image/image/Lab Komputer.jpeg"><h3>Lab Komputer</h3><p>Perangkat modern untuk IT</p></div>
+                <div class="card"><img src="image/Lab IPA.jpeg"><h3>Lab IPA</h3><p>Fasilitas eksperimen sains</p></div>
+                <div class="card"><img src="image/masjid.jpeg"><h3>Masjid An-Nisa</h3><p>Pusat kegiatan ibadah</p></div>
+                <div class="card"><img src="image/Perpustakaan.jpeg"><h3>Perpustakaan</h3><p>Koleksi buku lengkap</p></div>
+                <div class="card"><img src="image/Kantin.jpeg"><h3>Kantin</h3><p>Makanan sehat & higienis</p></div>
+                <div class="card"><img src="image/Aula.jpeg"><h3>Aula Ibnu Sina</h3><p>Gedung serbaguna</p></div>
+                <div class="card"><img src="image/Gedung Olahraga.jpeg"><h3>Gedung Olahraga</h3><p>Fasilitas olahraga indoor</p></div>
+                <div class="card"><img src="image/UKS.jpeg"><h3>UKS</h3><p>Layanan kesehatan siswa</p></div>
+                <div class="card"><img src="image/Lapangan Luar.jpeg"><h3>Lapangan</h3><p>Fasilitas olahraga outdoor</p></div>
+                <div class="card"><img src="image/Studio Musik.jpeg"><h3>Studio Musik</h3><p>Fasilitas bakat musik</p></div>
+                <div class="card"><img src="image/Student Hub.jpeg"><h3>Student Hub</h3><p>Area diskusi kreatif</p></div>
+                <div class="card"><img src="image/Ruang Teater.jpeg"><h3>Ruang Teater</h3><p>Melatih drama dan seni</p></div>
+                <div class="card"><img src="image/Ruang MUsik.jpeg"><h3>Ruang Musik</h3><p>Belajar teori musik</p></div>
+                <div class="card"><img src="image/Kamar Asrama.jpeg"><h3>Kamar Asrama</h3><p>Lingkungan tinggal nyaman</p></div>
+
+                <div class="card"><img src="image/Lab Komputer.jpeg"><h3>Lab Komputer</h3><p>Perangkat modern untuk IT</p></div>
+                <div class="card"><img src="image/Lab IPA.jpeg"><h3>Lab IPA</h3><p>Fasilitas eksperimen sains</p></div>
+                <div class="card"><img src="image/masjid.jpeg"><h3>Masjid An-Nisa</h3><p>Pusat kegiatan ibadah</p></div>
+                <div class="card"><img src="image/Perpustakaan.jpeg"><h3>Perpustakaan</h3><p>Koleksi buku lengkap</p></div>
+                <div class="card"><img src="image/Kantin.jpeg"><h3>Kantin</h3><p>Makanan sehat & higienis</p></div>
+                <div class="card"><img src="image/Aula.jpeg"><h3>Aula Ibnu Sina</h3><p>Gedung serbaguna</p></div>
+                <div class="card"><img src="image/Gedung Olahraga.jpeg"><h3>Gedung Olahraga</h3><p>Fasilitas olahraga indoor</p></div>
+                <div class="card"><img src="image/UKS.jpeg"><h3>UKS</h3><p>Layanan kesehatan siswa</p></div>
+                <div class="card"><img src="image/Lapangan Luar.jpeg"><h3>Lapangan</h3><p>Fasilitas olahraga outdoor</p></div>
+                <div class="card"><img src="image/Studio Musik.jpeg"><h3>Studio Musik</h3><p>Fasilitas bakat musik</p></div>
+                <div class="card"><img src="image/Student Hub.jpeg"><h3>Student Hub</h3><p>Area diskusi kreatif</p></div>
+                <div class="card"><img src="image/Ruang Teater.jpeg"><h3>Ruang Teater</h3><p>Melatih drama dan seni</p></div>
+                <div class="card"><img src="image/Ruang MUsik.jpeg"><h3>Ruang Musik</h3><p>Belajar teori musik</p></div>
+                <div class="card"><img src="image/Kamar Asrama.jpeg"><h3>Kamar Asrama</h3><p>Lingkungan tinggal nyaman</p></div>
+            </div>
+        </div>
+        <button class="btn-toggle-fasilitas" onclick="toggleFasilitas()">Lihat Selengkapnya <i class="fas fa-grid"></i></button>
+    </div>
+
+    <div id="mode-grid" class="fasilitas-grid" style="display: none;">
+        <div class="card"><img src="image/Lab Komputer.jpeg"><h3>Lab Komputer</h3><p>Perangkat modern untuk IT</p></div>
+        <div class="card"><img src="image/Lab IPA.jpeg"><h3>Lab IPA</h3><p>Fasilitas eksperimen sains</p></div>
+        <div class="card"><img src="image/masjid.jpeg"><h3>Masjid An-Nisa</h3><p>Pusat kegiatan ibadah</p></div>
+        <div class="card"><img src="image/Perpustakaan.jpeg"><h3>Perpustakaan</h3><p>Koleksi buku lengkap</p></div>
+        <div class="card"><img src="image/Kantin.jpeg"><h3>Kantin</h3><p>Makanan sehat & higienis</p></div>
+        <div class="card"><img src="image/Aula.jpeg"><h3>Aula Ibnu Sina</h3><p>Gedung serbaguna</p></div>
+        <div class="card"><img src="image/Gedung Olahraga.jpeg"><h3>Gedung Olahraga</h3><p>Fasilitas olahraga indoor</p></div>
+        <div class="card"><img src="image/UKS.jpeg"><h3>UKS</h3><p>Layanan kesehatan siswa</p></div>
+        <div class="card"><img src="image/Lapangan Luar.jpeg"><h3>Lapangan</h3><p>Fasilitas olahraga outdoor</p></div>
+        <div class="card"><img src="image/Studio Musik.jpeg"><h3>Studio Musik</h3><p>Fasilitas bakat musik</p></div>
+        <div class="card"><img src="image/Student Hub.jpeg"><h3>Student Hub</h3><p>Area diskusi kreatif</p></div>
+        <div class="card"><img src="image/Ruang Teater.jpeg"><h3>Ruang Teater</h3><p>Melatih drama dan seni</p></div>
+        <div class="card"><img src="image/Ruang MUsik.jpeg"><h3>Ruang Musik</h3><p>Belajar teori musik</p></div>
+        <div class="card"><img src="image/Kamar Asrama.jpeg"><h3>Kamar Asrama</h3><p>Lingkungan tinggal nyaman</p></div>
+    </div>
+    <div id="btn-hide-container" style="display: none; margin-top: 30px;">
+        <button class="btn-toggle-fasilitas btn-danger" onclick="toggleFasilitas()">Sembunyikan <i class="fas fa-arrow-up"></i></button>
+    </div>
+  </section>
+
+ <footer>
+    <div class="footer-content">
+        <!-- Left Section -->
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global. Sekolah impian masa depan.</p>
+            <!-- Social Media Moved Here -->
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Middle Section (Contact Info) -->
+        <div class="footer-col">
+            <h3>Kontak Sekolah</h3>
+            <div class="footer-links">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> hafsa.school@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> 0273-145270</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. A. Yani No.200, Dusun II, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57161</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section (Map) -->
+        <div class="footer-col">
+            <h3>Lokasi</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 Hafsa Boarding School. All Rights Reserved.
+    </div>
+</footer>
+
+  <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        html.classList.toggle("dark-mode")
+
+        if (html.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark")
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light")
+        }
+    }
+
+    const sliderSpeed = 0.5; let sliderContainer = document.querySelector('.slider-container'); let isHovering = false;
+    function autoScrollSlider() {
+        const sliderMode = document.getElementById("mode-slider");
+        if (sliderMode && sliderMode.style.display !== "none" && !isHovering) {
+            sliderContainer.scrollLeft += sliderSpeed;
+            if (sliderContainer.scrollLeft >= (sliderContainer.scrollWidth / 2)) sliderContainer.scrollLeft = 0;
+        }
+        requestAnimationFrame(autoScrollSlider);
+    }
+    if(sliderContainer) {
+        autoScrollSlider();
+        sliderContainer.addEventListener('mouseenter', () => isHovering = true);
+        sliderContainer.addEventListener('mouseleave', () => isHovering = false);
+    }
+    function toggleFasilitas() {
+        const sliderMode = document.getElementById("mode-slider");
+        const gridMode = document.getElementById("mode-grid");
+        const btnHide = document.getElementById("btn-hide-container");
+        const sectionFasilitas = document.querySelector('.fasilitas-section');
+        if (sliderMode.style.display !== "none") {
+            sliderMode.style.display = "none"; gridMode.style.display = "grid"; gridMode.classList.add("fade-in"); btnHide.style.display = "block";
+        } else {
+            sliderMode.style.display = "block"; sliderMode.classList.add("fade-in"); gridMode.style.display = "none"; btnHide.style.display = "none"; isHovering = false;
+            sectionFasilitas.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+    </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>

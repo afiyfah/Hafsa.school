@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const html = document.documentElement;
+
+      if(savedTheme === "dark") {
+        html.classList.add("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+          }
+        }, 10);
+
+      } else {
+        html.classList.remove("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+          }
+        }, 10);
+      }
+    })();
+  </script>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" class="logo">
+        <div class="school-name">
+          <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+        </div>
+      </div>
+      <button class="theme-switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="theme-icon"></i> Mode
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+        <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+        <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="slideshow">
+      <div class="slide fade" style="background-image: url('image/slide1.jpeg'); display: block;"></div>
+      <div class="slide fade" style="background-image: url('image/slide2.jpeg');"></div>
+      <div class="slide fade" style="background-image: url('image/slide3.png');"></div>
+    </div>
+    <div class="hero-text">
+      <h2>SELAMAT DATANG DI</h2>
+      <h1>"HAFSA BOARDING SCHOOL"</h1>
+      <p>Sekolah Internasional Berbasis Karakter</p>
+    </div>
+  </section>
+  
+  <!-- ⭐ BOX VISI MISI YANG BARU ⭐ -->
+<section id="visi-misi" class="visi-misi-section">
+  <div class="visi-misi-box">
+
+    <h2>Visi & Misi Hafsa Boarding School</h2>
+
+    <div class="dua-kolom-grid">
+
+      <!-- BOX VISI -->
+      <div class="visi-misi-card">
+        <h3>Visi</h3>
+        <p>
+          “Membentuk generasi yang tidak hanya berakhlak mulia, tetapi juga memiliki kecerdasan intelektual yang
+          unggul serta pemahaman ilmu pengetahuan yang luas. Generasi ini diharapkan mampu berkontribusi secara 
+          nyata di tingkat global, bersaing di berbagai bidang, dan berperan aktif dalam memajukan peradaban. 
+          Seluruh proses pembentukan karakter dan kompetensinya didasarkan pada nilai-nilai Islami, sehingga 
+          setiap peserta didik memiliki kepribadian yang kokoh, beretika, dan mampu menjaga integritas di tengah 
+          tantangan zaman.”
+        </p>
+      </div>
+
+      <!-- BOX MISI -->
+      <div class="visi-misi-card">
+        <h3>Misi</h3>
+        <ul>
+          <li>Mengembangkan lingkungan belajar yang Islami dan nyaman.</li>
+          <li>Mendorong kemampuan akademik dan non-akademik secara seimbang.</li>
+          <li>Membentuk karakter disiplin, tanggung jawab, dan kemandirian.</li>
+          <li>Meningkatkan kompetensi global melalui pembelajaran bahasa asing.</li>
+          <li>Menanamkan nilai kepemimpinan dan integritas pada peserta didik.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <footer>
+    <div class="footer-content">
+        <!-- Left Section -->
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global. Sekolah impian masa depan.</p>
+            <!-- Social Media Moved Here -->
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Middle Section (Contact Info) -->
+        <div class="footer-col">
+            <h3>Kontak Sekolah</h3>
+            <div class="footer-links">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> hafsa.school@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> 0273-145270</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. A. Yani No.200, Dusun II, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57161</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section (Map) -->
+        <div class="footer-col">
+            <h3>Lokasi</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 Hafsa Boarding School. All Rights Reserved.
+    </div>
+</footer>
+
+    <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        html.classList.toggle("dark-mode")
+
+        if (html.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark")
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light")
+        }
+    }
+
+    let slideIndex = 0; 
+    showSlides();
+
+    function showSlides() {
+      let slides = document.querySelectorAll(".slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+  
+</body>
+</html>

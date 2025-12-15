@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const html = document.documentElement;
+
+      if(savedTheme === "dark") {
+        html.classList.add("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+          }
+        }, 10);
+
+      } else {
+        html.classList.remove("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+          }
+        }, 10);
+      }
+    })();
+  </script>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="school-name">
+          <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+        </div>
+      </div>
+      <button class="theme-switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="theme-icon"></i> Mode
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+        <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+        <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PPDB SECTION -->
+  <section id="ppdb" class="ppdb-section">
+    <div class="ppdb-header">
+      <h2>PPDB HAFSA BOARDING SCHOOL</h2>
+      <p>Informasi lengkap pendaftaran peserta didik baru</p>
+    </div>
+    <div class="ppdb-tabs">
+      <button class="ppdb-tablink" onclick="openTabPPDB(event, 'alur')" id="defaultOpenPPDB">Alur Pendaftaran</button>
+      <button class="ppdb-tablink" onclick="openTabPPDB(event, 'syarat')">Syarat Pendaftaran</button>
+      <button class="ppdb-tablink" onclick="openTabPPDB(event, 'jadwal')">Jadwal Pendaftaran</button>
+      <button class="ppdb-tablink" onclick="openTabPPDB(event, 'hasil')">Hasil Penerimaan</button>
+      <button class="ppdb-tablink" onclick="openTabPPDB(event, 'formulir')">Formulir Pendaftaran</button>
+    </div>
+
+    <div id="alur" class="ppdb-tabcontent">
+      <h3>Alur Pendaftaran</h3>
+      <div class="alur-flow">
+        <div class="alur-card"><div class="alur-header"><h4>1. Pengisian Formulir</h4></div><div class="alur-body"><p>Mengisi formulir lengkap di website atau sekretariat.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>2. Unggah Berkas</h4></div><div class="alur-body"><p>Identitas diri, rapor, dan dokumen pendukung.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>3. Verifikasi Berkas</h4></div><div class="alur-body"><p>Panitia mengecek kelengkapan data pendaftaran.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>4. Tes Seleksi</h4></div><div class="alur-body"><p>Tes akademik, baca Al-Qur’an, dan wawancara.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>5. Pengumuman</h4></div><div class="alur-body"><p>Hasil kelulusan diumumkan via website/WA.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>6. Daftar Ulang</h4></div><div class="alur-body"><p>Registrasi ulang bagi yang dinyatakan lulus.</p></div></div>
+        <div class="alur-card"><div class="alur-header"><h4>7. Awal KBM</h4></div><div class="alur-body"><p>Pengarahan awal tahun dan masuk asrama.</p></div></div>
+      </div>
+    </div>
+
+    <div id="syarat" class="ppdb-tabcontent">
+      <h3>Syarat Pendaftaran</h3>
+      <div class="syarat-container">
+        <div class="syarat-card"><h4>📄 Dokumen Umum</h4><ul><li>Fotokopi Akta Kelahiran (1 lembar)</li><li>Fotokopi Kartu Keluarga (1 lembar)</li><li>Pas foto terbaru 3×4 (2 lembar)</li><li>Fotokopi KTP orang tua/wali</li><li>Fotokopi rapor semester terakhir</li><li>Surat keterangan sehat</li></ul></div>
+        <div class="syarat-card"><h4>🏫 Syarat Khusus</h4><ul><li>Surat izin orang tua/wali</li><li>Bersedia mengikuti aturan asrama</li><li>Mengikuti tes baca Al-Qur’an</li><li>Memiliki kemandirian dasar</li></ul></div>
+      </div>
+    </div>
+
+    <div id="jadwal" class="ppdb-tabcontent">
+      <h3>Jadwal Pendaftaran</h3>
+      <table>
+        <tr><th>Tahap</th><th>Tanggal</th></tr>
+        <tr><td data-label="Tahap">Pendaftaran Online/Offline</td><td data-label="Tanggal">1 Januari – 15 Februari 2025</td></tr>
+        <tr><td data-label="Tahap">Verifikasi Berkas</td><td data-label="Tanggal">1–20 Februari 2025</td></tr>
+        <tr><td data-label="Tahap">Tes Seleksi & Wawancara</td><td data-label="Tanggal">22–28 Februari 2025</td></tr>
+        <tr><td data-label="Tahap">Pengumuman Hasil</td><td data-label="Tanggal">5 Maret 2025</td></tr>
+        <tr><td data-label="Tahap">Daftar Ulang</td><td data-label="Tanggal">6–15 Maret 2025</td></tr>
+        <tr><td data-label="Tahap">Awal Masuk Asrama</td><td data-label="Tanggal">10 Juli 2025</td></tr>
+      </table>
+    </div>
+
+    <div id="hasil" class="ppdb-tabcontent">
+        <h3>Hasil Penerimaan</h3>
+        <p>Hasil seleksi PPDB akan diumumkan pada <b>5 Maret 2025</b>.</p>
+        <p>Cek hasil melalui:</p>
+        <ul style="margin-left:20px; margin-bottom:20px;"><li>Website ini</li><li>Papan pengumuman</li><li>WhatsApp</li></ul>
+        <p><i>Catatan: Hanya peserta yang lulus yang dapat mengikuti proses daftar ulang.</i></p>
+    </div>
+    <div id="formulir" class="ppdb-tabcontent">
+       <h3>Formulir Pendaftaran Siswa Baru</h3>
+
+<form class="ppdb-grid">
+
+    <h4>Data Diri Calon Siswa</h4> 
+    <div class="grid">
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="text" placeholder="NISN" required>
+        <input type="text" placeholder="Tempat Lahir" required>
+        <input type="date" required>
+        <select required>
+            <option>Jenis Kelamin</option>
+            <option>Laki-Laki</option>
+            <option>Perempuan</option>
+        </select>
+        <input type="text" placeholder="Agama" required>
+    </div>
+
+    <textarea rows="3" placeholder="Alamat Lengkap" required></textarea>
+
+    <h4>Data Orang Tua</h4>
+    <div class="grid">
+        <input type="text" placeholder="Nama Ayah" required>
+        <input type="text" placeholder="Pekerjaan Ayah" required>
+        <input type="number" placeholder="Nomor HP Ayah" required>
+
+        <input type="text" placeholder="Nama Ibu" required>
+        <input type="text" placeholder="Pekerjaan Ibu" required>
+        <input type="number" placeholder="Nomor HP Ibu" required>
+    </div>
+
+    <h4>Sekolah Asal</h4>
+    <div class="grid">
+        <input type="text" placeholder="Nama Sekolah Asal" required>
+        <input type="number" placeholder="Tahun Lulus" required>
+    </div>
+
+    <h4>Berkas</h4>
+    <div class="grid">
+        <input type="file">
+        <input type="file">
+    </div>
+
+    <textarea rows="5" placeholder="Keterangan Tambahan (opsional)"></textarea>
+
+    <button type="submit">Kirim Pendaftaran</button>
+</form>
+  </section>
+
+ <footer>
+    <div class="footer-content">
+        <!-- Left Section -->
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global. Sekolah impian masa depan.</p>
+            <!-- Social Media Moved Here -->
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Middle Section (Contact Info) -->
+        <div class="footer-col">
+            <h3>Kontak Sekolah</h3>
+            <div class="footer-links">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> hafsa.school@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> 0273-145270</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. A. Yani No.200, Dusun II, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57161</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section (Map) -->
+        <div class="footer-col">
+            <h3>Lokasi</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 Hafsa Boarding School. All Rights Reserved.
+    </div>
+</footer>
+
+  <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        html.classList.toggle("dark-mode")
+
+        if (html.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark")
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light")
+        }
+    }
+
+    const ppdbOrder = ['alur', 'syarat', 'jadwal', 'hasil', 'formulir'];
+    let currentPPDBIndex = 0; 
+    function openTabPPDB(evt, tabName) {
+        const headerPPDB = document.querySelector('.ppdb-header');
+        const tabcontents = document.getElementsByClassName("ppdb-tabcontent");
+        const tablinks = document.getElementsByClassName("ppdb-tablink");
+        const newIndex = ppdbOrder.indexOf(tabName);
+        let animClass = 'ppdb-anim-right'; 
+        if (newIndex < currentPPDBIndex) animClass = 'ppdb-anim-left'; 
+        currentPPDBIndex = newIndex; 
+        headerPPDB.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        for (let i = 0; i < tabcontents.length; i++) { tabcontents[i].style.display = "none"; tabcontents[i].classList.remove('ppdb-anim-right', 'ppdb-anim-left'); }
+        for (let i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+        const targetContent = document.getElementById(tabName);
+        targetContent.style.display = "block"; targetContent.classList.add(animClass); 
+        if (tablinks[newIndex]) tablinks[newIndex].classList.add("active");
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        const defaultBtn = document.getElementById("defaultOpenPPDB");
+        if(defaultBtn) { document.getElementById('alur').style.display = 'block'; defaultBtn.classList.add("active"); }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>

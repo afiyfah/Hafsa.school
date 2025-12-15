@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const html = document.documentElement;
+
+      if(savedTheme === "dark") {
+        html.classList.add("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+          }
+        }, 10);
+
+      } else {
+        html.classList.remove("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+          }
+        }, 10);
+      }
+    })();
+  </script>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" class="logo">
+        <div class="school-name">
+          <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+        </div>
+      </div>
+      <button class="theme-switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="theme-icon"></i> Mode
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+        <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+        <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+        <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+        <li><a href="kontak.html"><i class="fas fa-phone"></i> Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HALAMAN KONTAK -->
+  <section id="kontak" class="kontak-section">
+    <div class="kontak-header"><h2>HUBUNGI KAMI</h2><p>Kami siap melayani informasi seputar Hafsa Boarding School</p></div>
+    <div class="kontak-grid">
+      <div class="contact-details">
+        <h3>Kontak Sekolah</h3>
+        <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div class="info-text"><strong>Email</strong><p>hafsa.school@gmail.com</p></div></div>
+        <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><strong>Alamat</strong><p>Jl. A. Yani No.200, Dusun II, Pabelan,<br>Kec. Kartasura, Kabupaten Sukoharjo,<br>Jawa Tengah 57161</p></div></div>
+        <div class="info-item"><div class="info-icon"><i class="fas fa-phone-alt"></i></div><div class="info-text"><strong>Telepon</strong><p>0273-145270</p></div></div>
+      </div>
+      <div class="contact-form">
+        <h3>Kirim Pesan</h3>
+        <form><input type="text" placeholder="Nama Lengkap"><input type="email" placeholder="Alamat Email"><textarea rows="5" placeholder="Pesan Anda"></textarea><button type="button">Kirim Pesan <i class="fas fa-paper-plane"></i></button></form>
+      </div>
+    </div>
+    <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed " width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global. Sekolah impian masa depan.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Tautan Cepat</h3>
+            <ul class="footer-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#ppdb">PPDB</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Sosial Media</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 Hafsa Boarding School. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        html.classList.toggle("dark-mode")
+
+        if (html.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark")
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light")
+        }
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>

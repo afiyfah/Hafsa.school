@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+</style>
+
+</head>
+
+<!-- =============== GLOBAL POPUP =============== -->
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-box">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <img id="popupImg" class="popup-img" src="">
+        <h2 id="popupTitle"></h2>
+        <p id="popupDesc"></p>
+    </div>
+</div>
+<!-- =========================================== -->
+
+
+<body>
+
+<script>
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  const html = document.documentElement;
+
+  if(savedTheme === "dark") {
+    html.classList.add("dark-mode");
+    setTimeout(() => {
+      const icon = document.getElementById("theme-icon");
+      if (icon) { icon.classList.remove("fa-moon"); icon.classList.add("fa-sun"); }
+    }, 10);
+  } else {
+    html.classList.remove("dark-mode");
+    setTimeout(() => {
+      const icon = document.getElementById("theme-icon");
+      if (icon) { icon.classList.remove("fa-sun"); icon.classList.add("fa-moon"); }
+    }, 10);
+  }
+})();
+</script>
+
+
+<header>
+  <div class="top-bar">
+    <div class="logo-container">
+      <img src="image/logo.png" alt="Logo" class="logo">
+      <div class="school-name">
+        <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+      </div>
+    </div>
+    <button class="theme-switch" onclick="toggleDarkMode()">
+      <i class="fas fa-moon" id="theme-icon"></i> Mode
+    </button>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+      <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+      <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- ====================== KEGIATAN ====================== -->
+<section id="kegiatan-section">
+  <div class="kegiatan-header">
+      <h1>Aktivitas Sekolah</h1>
+      <p>Membentuk karakter, kreativitas, dan potensi siswa</p>
+      <div class="kegiatan-tabs">
+          <button class="kegiatan-tab-btn active" onclick="switchKegiatan('kegiatan')">Kegiatan Rutin</button>
+          <button class="kegiatan-tab-btn" onclick="switchKegiatan('ekskul')">Ekstrakurikuler</button>
+      </div>
+  </div>
+
+  <!-- ================= KEGIATAN RUTIN ================= -->
+  <div id="tab-kegiatan" class="kegiatan-content-box active">
+      <div class="tiga-kolom-grid">
+
+          <!-- 1 -->
+          <div class="kegiatan-card" onclick="openPopup('Literasi.jpeg','Program Literasi Pagi','Kegiatan Literasi Pagi merupakan program rutin yang dirancang untuk menumbuhkan minat baca serta membangun kebiasaan belajar yang positif sejak awal hari. Sebelum pembelajaran dimulai, siswa diajak membaca berbagai jenis bahan bacaan seperti cerita, artikel pengetahuan, hingga teks informatif sesuai jenjangnya. Suasana kelas dibuat tenang dan nyaman agar siswa dapat fokus membaca secara mandiri ataupun berdiskusi ringan dengan teman.')">
+              <div class="foto-box"><img src="image/perpustakaan.jpg"></div>
+              <p class="judul-kegiatan">“Program Literasi Pagi: Membangun Wawasan Global Sebelum Pelajaran Dimulai”</p>
+          </div>
+
+          <!-- 2 -->
+          <div class="kegiatan-card" onclick="openPopup('english.jpeg','Program Bahasa Global','Program Bahasa Global dirancang untuk membantu siswa menguasai bahasa Inggris dan Arab melalui pembelajaran yang interaktif dan menyenangkan. Setiap sesi menggabungkan latihan berbicara, membaca, dan mendengar agar siswa terbiasa menggunakan kedua bahasa secara alami dalam keseharian. Program ini bertujuan membangun kemampuan komunikasi yang kuat sekaligus menumbuhkan rasa percaya diri saat berinteraksi di berbagai situasi.')">
+              <div class="foto-box"><img src="image/bahasa.jpg"></div>
+              <p class="judul-kegiatan">“Program Bahasa Global: Fasih Berbahasa Inggris dan Arab dengan Penuh Percaya Diri”</p>
+          </div>
+
+          <!-- 3 -->
+          <div class="kegiatan-card" onclick="openPopup('tari.jpg','Festival Budaya Hafsa','Festival Budaya Hafsa merupakan ajang tahunan yang menghadirkan pertunjukan seni, musik, dan tarian dari berbagai tradisi. Melalui kegiatan ini, siswa diajak mengenal dan menghargai keberagaman budaya yang ada di sekitar mereka. Acara ini tidak hanya memperkuat kerja sama dan kreativitas, tetapi juga menumbuhkan rasa bangga terhadap identitas budaya masing-masing.')">
+              <div class="foto-box"><img src="image/saman.jpg"></div>
+              <p class="judul-kegiatan">“Warna-Warni Dunia: Festival Budaya Hafsa yang Menyatukan Berbagai Bangsa”</p>
+          </div>
+
+      </div>
+  </div>
+
+
+  <!-- ================= EKSTRAKURIKULER ================= -->
+  <div id="tab-ekskul" class="kegiatan-content-box">
+      <div class="ekskul-grid-container">
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('KIR.jpg','KIR','KIR memberi kesempatan bagi siswa untuk mengeksplorasi minat dan bakat dalam bidang sains dan penelitian melalui aktivitas eksperimen, observasi, dan diskusi ilmiah. Dengan bimbingan guru dan kerja kelompok, siswa dapat mengembangkan kemampuan analitis dan kritis dalam memahami fenomena alam maupun teknologi. Kegiatan ini menumbuhkan semangat penemuan dan keingintahuan ilmiah yang bermanfaat bagi pengembangan akademis dan kreativitas siswa.')">
+              <div class="ekskul-thumb"><img src="image/KIR.jpg"></div>
+              <div class="ekskul-info"><h3>KIR</h3><p>Kelompok Ilmiah Remaja</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('PRAMUKA.jpg','Pramuka','Pramuka melatih kemandirian, disiplin, dan jiwa kebersamaan siswa melalui kegiatan luar ruang, permainan kelompok, dan pelatihan kepemimpinan. Melalui tantangan-tantangan praktis seperti orientasi, survival, atau kegiatan kerja bakti, siswa belajar kerja sama, tanggung jawab, dan kemandirian. Program ini bertujuan membentuk karakter dan keterampilan hidup yang tangguh serta rasa saling tolong pada sesama.')">
+              <div class="ekskul-thumb"><img src="image/PRAMUKA.jpg"></div>
+              <div class="ekskul-info"><h3>Pramuka</h3><p>Melatih Kemandirian</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('Paskibra.jpg','Paskibra','Paskibra mengajarkan nilai nasionalisme dan kebanggaan terhadap tanah air melalui latihan baris-berbaris, upacara, dan disiplin tinggi. Dengan semangat kebersamaan dan latihan rutin, siswa belajar menghormati simbol bangsa dan menghayati makna tanggung jawab sebagai generasi muda. Kegiatan ini membentuk kedisiplinan, rasa persatuan, dan rasa cinta tanah air yang mendalam.')">
+              <div class="ekskul-thumb"><img src="image/Paskibra.jpg"></div>
+              <div class="ekskul-info"><h3>Paskibra</h3><p>Semangat Nasionalisme</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('rohis.jpeg','Rohis','ROHIS menyediakan ruang bagi siswa untuk memperdalam nilai keislaman dan meningkatkan spiritualitas melalui pengajian, kajian bersama, dan kegiatan keagamaan. Anggota diajak untuk berdiskusi, berbagi pengalaman, serta belajar nilai-nilai moral di lingkungan sekolah. Lewat kegiatan ini, siswa diharapkan tumbuh menjadi pribadi yang religius, bertanggung jawab, dan toleran.')">
+              <div class="ekskul-thumb"><img src="image/rohis.jpeg"></div>
+              <div class="ekskul-info"><h3>Rohis</h3><p>Nilai Keislaman</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('basket.jpg','Basket','Basket adalah wadah bagi siswa untuk mengembangkan jiwa sportifitas, kerja sama tim, dan kemampuan fisik melalui latihan rutin dan pertandingan. Dalam lapangan basket, siswa belajar strategi, ketangguhan, dan semangat persaingan sehat — sambil saling mendukung rekan tim. Kegiatan ini membantu membangun kebugaran, disiplin latihan, dan nilai kolaborasi di antara siswa.')">
+              <div class="ekskul-thumb"><img src="image/basket.jpg"></div>
+              <div class="ekskul-info"><h3>Basket</h3><p>Sportivitas Tim</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('PMR.jpg','PMR','PMR mendorong kepedulian sosial dan jiwa kemanusiaan siswa melalui kegiatan pertolongan pertama, donor darah, dan pengabdian masyarakat. Dengan pelatihan medis dasar dan aksi nyata di komunitas, siswa belajar empati, solidaritas, serta tanggung jawab terhadap sesama. Aktivitas ini membentuk karakter peduli, disiplin, dan siap membantu dalam situasi mendesak.')">
+              <div class="ekskul-thumb"><img src="image/PMR.jpg"></div>
+              <div class="ekskul-info"><h3>PMR</h3><p>Kepedulian Sosial</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('OSIS.jpg','OSIS','OSIS menjadi wadah pembinaan kepemimpinan dan demokrasi siswa, memberi ruang bagi mereka untuk mengorganisir kegiatan sekolah, menyampaikan aspirasi, dan belajar tanggung jawab kolektif. Melalui rapat, proyek, dan program kerja, siswa dilatih mengambil keputusan, berkomunikasi, dan bekerja sama dalam tim. Kegiatan ini membentuk jiwa pemimpin, inisiatif, dan tanggung jawab sosial di lingkungan sekolah.')">
+              <div class="ekskul-thumb"><img src="image/OSIS.jpg"></div>
+              <div class="ekskul-info"><h3>OSIS</h3><p>Jiwa Kepemimpinan</p></div>
+          </a>
+
+          <a class="ekskul-card-clean" href="#" onclick="openPopup('ROBOTIK.jpg','Robotics','Klub Robotics mengajak siswa mengeksplorasi minat di bidang teknologi dan pemrograman melalui merancang, membangun, dan memprogram robot. Dengan kombinasi logika, kreativitas, dan kerja tim, siswa belajar berpikir sistematis dan teknis serta memahami penerapan ilmu komputer dan rekayasa. Kegiatan ini memupuk keterampilan abad ke-21 seperti problem solving, inovasi, dan kolaborasi.')">
+              <div class="ekskul-thumb"><img src="image/ROBOTIK.jpg"></div>
+              <div class="ekskul-info"><h3>Robotics</h3><p>Inovasi Teknologi</p></div>
+          </a>
+
+      </div>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Kontak Sekolah</h3>
+            <ul>
+                <li><i class="fas fa-envelope"></i> hafsa.school@gmail.com</li>
+                <li><i class="fas fa-phone-alt"></i> 0273-145270</li>
+                <li><i class="fas fa-map-marker-alt"></i> Jl. A. Yani No.200, Pabelan, Kartasura</li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Lokasi</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 Hafsa Boarding School. All Rights Reserved.</div>
+</footer>
+
+
+<!-- =============== SCRIPT POPUP + TAB + MODE =============== -->
+<script>
+function toggleDarkMode() {
+    const html = document.documentElement;
+    const icon = document.getElementById("theme-icon");
+
+    html.classList.toggle("dark-mode");
+
+    if (html.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon"); icon.classList.add("fa-sun");
+        localStorage.setItem("theme", "dark");
+    } else {
+        icon.classList.remove("fa-sun"); icon.classList.add("fa-moon");
+        localStorage.setItem("theme", "light");
+    }
+}
+
+function switchKegiatan(tipe) {
+    const tabKegiatan = document.getElementById('tab-kegiatan');
+    const tabEkskul = document.getElementById('tab-ekskul');
+    const btns = document.querySelectorAll('.kegiatan-tab-btn');
+
+    tabKegiatan.className = 'kegiatan-content-box';
+    tabEkskul.className = 'kegiatan-content-box';
+    btns.forEach(b => b.classList.remove('active'));
+
+    if (tipe === 'kegiatan') {
+        tabKegiatan.classList.add('active','anim-kiri');
+        btns[0].classList.add('active');
+    } else {
+        tabEkskul.classList.add('active','anim-kanan');
+        btns[1].classList.add('active');
+    }
+}
+
+function openPopup(img, title, desc) {
+    document.getElementById("popupImg").src = img;
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupDesc").innerText = desc;
+    document.getElementById("popupOverlay").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+});
+</script>
+
+</body>
+</html>

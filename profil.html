@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAFSA BOARDING SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+    body.loaded {
+      visibility: visible;
+      transition: background-color .3s, color .3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const html = document.documentElement;
+
+      if(savedTheme === "dark") {
+        html.classList.add("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+          }
+        }, 10);
+
+      } else {
+        html.classList.remove("dark-mode");
+
+        setTimeout(() => {
+          const icon = document.getElementById("theme-icon");
+          if (icon) {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+          }
+        }, 10);
+      }
+    })();
+  </script>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="school-name">
+          <h1>HAFSA<br>BOARDING<br>SCHOOL</h1>
+        </div>
+      </div>
+      <button class="theme-switch" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="theme-icon"></i> Mode
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+        <li><a href="Fasilitas.html"><i class="fas fa-school"></i> Fasilitas</a></li>
+        <li><a href="kegiatan_ekstrakurikuler.html"><i class="fas fa-running"></i> Kegiatan</a></li>
+        <li><a href="ppdb.html"><i class="fas fa-file-alt"></i> PPDB</a></li>
+        <li><a href="kontak.html"><i class="fas fa-phone"></i> Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="profil">
+    <div class="judul-profil">PROFIL SEKOLAH</div>
+    <div class="profil-tab-container">
+      <button class="profil-tab-btn active" onclick="openTabProfil('visi')">Visi</button>
+      <button class="profil-tab-btn" onclick="openTabProfil('misi')">Misi</button>
+      <button class="profil-tab-btn" onclick="openTabProfil('sejarah')">Sejarah</button>
+    </div>
+
+    <div id="visi" class="profil-content active">
+      <div class="icon-box">
+        <i class="fas fa-eye"></i>
+        <h2>Visi</h2>
+      </div>
+      <div class="text-box"><p>"Menjadi sekolah menengah internasional yang unggul dan inovatif dalam mencetak generasi muda berkarakter kuat, berwawasan global, serta memiliki kemampuan berpikir kritis, kreatif, dan analitis. Kami berkomitmen menyediakan lingkungan pembelajaran bilingual yang mendukung penguasaan bahasa dan literasi akademik, memupuk nilai-nilai moral, integritas, dan kepemimpinan, sehingga setiap siswa mampu menghadapi tantangan dan peluang di dunia masa depan dengan percaya diri, adaptif, dan berdaya saing tinggi."</p></div>
+    </div>
+    <div id="misi" class="profil-content">
+      <div class="icon-box">
+        <i class="fas fa-bullseye"></i>
+        <h2>Misi</h2>
+      </div>
+      <div class="text-box"><ul><li>Menyelenggarakan pendidikan bilingual yang interaktif untuk membangun komunikasi global.</li><li>Mengembangkan karakter positif dan kepemimpinan global berbasis tanggung jawab, toleransi, dan empati.</li><li>Mendorong keterampilan berpikir kritis, kreatif, dan kolaboratif menghadapi tantangan modern.</li><li>Menciptakan lingkungan belajar inklusif serta menjalin kolaborasi internasional untuk memperluas wawasan siswa.</li></ul></div>
+    </div>
+    <div id="sejarah" class="profil-content">
+      <div class="icon-box">
+        <i class="fas fa-history"></i>
+        <h2>Sejarah</h2>
+      </div>
+      <div class="text-box"><p>Hafsa Boarding School berdiri pada tanggal 1 Agustus 2020 di Jawa Tengah sebagai lembaga pendidikan modern yang berfokus pada pembentukan generasi berwawasan global. Pada tahun pertamanya, sekolah ini menampung 300 siswa dari berbagai daerah di Indonesia.</p><p>Dengan sistem pendidikan bilingual (Bahasa Indonesia dan Bahasa Inggris), Hafsa Boarding School menghadirkan pembelajaran interaktif dan kontekstual yang mendorong siswa berpikir kritis, kreatif, serta berkarakter tangguh.</p></div>
+    </div>
+  </section>
+
+<footer>
+    <div class="footer-content">
+        <!-- Left Section -->
+        <div class="footer-col">
+            <h3>Hafsa Boarding School</h3>
+            <p>Membangun generasi berkarakter, cerdas, dan berwawasan global. Sekolah impian masa depan.</p>
+            <!-- Social Media Moved Here -->
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Middle Section (Contact Info) -->
+        <div class="footer-col">
+            <h3>Kontak Sekolah</h3>
+            <div class="footer-links">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> hafsa.school@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> 0273-145270</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. A. Yani No.200, Dusun II, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57161</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section (Map) -->
+        <div class="footer-col">
+            <h3>Lokasi</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Jl.+A.+Yani+No.200,+Pabelan,+Kartasura,+Sukoharjo,+Jawa+Tengah+57161&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 Hafsa Boarding School. All Rights Reserved.
+    </div>
+</footer>
+
+  <script>
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+
+        html.classList.toggle("dark-mode")
+
+        if (html.classList.contains("dark-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+            localStorage.setItem("theme", "dark")
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+            localStorage.setItem("theme", "light")
+        }
+    }
+
+    function openTabProfil(tabName) {
+      const contents = document.getElementsByClassName("profil-content");
+      const btns = document.getElementsByClassName("profil-tab-btn");
+      for (let i = 0; i < contents.length; i++) contents[i].classList.remove("active");
+      for (let i = 0; i < btns.length; i++) btns[i].classList.remove("active");
+      document.getElementById(tabName).classList.add("active");
+      for (let btn of btns) { if (btn.innerText.toLowerCase() === tabName.toLowerCase()) btn.classList.add("active"); }
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>
